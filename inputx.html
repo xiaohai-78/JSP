@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function isValid()
+	{
+		if((frmLogin.USERNAME.value=="")||(frmLogin.USERPWD.value=="")||(frmLogin.USERPWDS.value==""))
+			{
+			window.alert("请您填写带有*号的选项");
+			document.location.reload();
+			return false;
+			}
+		if(frmLogin.USERPWD.value!=frmLogin.USERPWDS.value)
+			{
+			window.alert("两次输入密码不一致，请重新输入");
+			document.location.reload();
+			return false;
+			}
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=GB2312">
+<title>Untitled Document</title>
+</head>
+<body bgcolor="#B0E0E6">
+	<BODY>
+		<FORM ACTION="handles.jsp" METHOD="post" name="frmLogin">
+		<table width"70" height="200" border=1 bgcolor="#F0FFFF" align="center">
+			<tr>
+				<td align="center">*姓名:</td>
+				<td align="center"><INPUT TYPE="text" name="USERNAME"></td>
+			</tr>	
+			<tr>
+				<td align="center">*密码:</td>
+				<td align="center"><INPUT TYPE="password" name="USERPWD"></td>
+			</tr>	
+			<tr>
+				<td align="center">*确认密码:</td>
+				<td align="center"><INPUT TYPE="password" name="USERPWDS"></td>
+			</tr>	
+			<tr>
+				<td align="center">密保问题:</td>
+				<td align="center">
+					<select name="question" SIZE="1">
+						<OPTION VALUE="ONE" selected>出生在哪里？</OPTION>	
+						<OPTION VALUE="TWO">最喜欢的明星是谁？</OPTION>
+					</select>
+				</td>
+			</tr>	
+			<tr>
+				<td align="center">密保回答</td>
+				<td align="center"><input type="text" name="MBWT"></td>
+			</tr>
+			<tr>
+				<td align="center">性别:</td>
+				<td align="center">
+					<INPUT TYPE="radio" NAME="SEX" VALUE="男" checked>男
+					<INPUT TYPE="radio" NAME="SEX" VALUE="女">女
+				</td>
+			</tr>	
+			<tr>
+				<td align="center">血型:</td>
+				<td align="center">
+					<INPUT TYPE="radio" NAME="BLOOD" VALUE="O" checked>O
+					<INPUT TYPE="radio" NAME="BLOOD" VALUE="A">A
+					<INPUT TYPE="radio" NAME="BLOOD" VALUE="B">B
+					<INPUT TYPE="radio" NAME="BLOOD" VALUE="AB">AB
+				</td>
+			</tr>	
+			<tr>
+				<td align="center">性格:</td>
+				<td align="center">
+					<INPUT TYPE="checkbox" Name="CHATACTER" VALUE="热情大方" checked>
+					热情大方
+					<INPUT TYPE="checkbox" Name="CHATACTER" VALUE="温柔体贴">
+					温柔体贴
+					<INPUT TYPE="checkbox" Name="CHATACTER" VALUE="多情善感">
+					多情善感
+				</td>
+			</tr>	
+			<tr>
+				<td align="center">简介:</td>
+				<td align="center">
+					<TEXTAREA ROWS="8" COLS="30" NAME="MEMO"></TEXTAREA>
+				</td>
+			</tr>	
+			<tr>
+				<td align="center">城市:</td>
+				<td align="center">
+					<SELECT SIZE="1" NAME="CITY">
+						<OPTION VALUE="北京">北京市</OPTION>
+						<OPTION VALUE="上海">上海市</OPTION>
+						<OPTION VALUE="南京">南京市</OPTION>
+						<OPTION VALUE="南昌">南昌市</OPTION>
+						<OPTION VALUE="深圳">深圳市</OPTION>
+						<OPTION VALUE="重庆">重庆市</OPTION>
+					</SELECT><BR>
+				</td>
+			</tr>	
+			<tr>
+				<td align="center"><INPUT TYPE="reset" VALUE="重置"></td>
+				<td align="center"><INPUT TYPE="submit" VALUE="提交" onclick="isValid()"></td>
+			</tr>
+		</table>
+		</FORM>
+	</BODY>
+</body>
+</html>
